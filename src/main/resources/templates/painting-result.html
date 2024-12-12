@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <title>Painting Result</title>
+</head>
+<body>
+<h1>Search Results</h1>
+<p>Search term: <span th:text="${searchTerm}"></span></p>
+<ul>
+  <li th:each="painting : ${paintings}">
+    <h3 th:text="${painting.title}"></h3>
+    <img th:src="@{/uploads/{imagePath}(imagePath=${painting.imagePath})}" alt="Painting Image" width="300">
+  </li>
+</ul>
+</body>
+</html>
